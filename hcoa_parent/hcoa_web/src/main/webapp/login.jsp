@@ -29,6 +29,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="resources/js/login/jquery.backstretch.min.js"></script>
     <script src="resources/js/login/scripts.js"></script>
     <script src="resources/js/login/login.js"></script>
+
+        
+        <script type="text/javascript">
+          $(function(){
+        	 
+        	  var $captchaImage = $(".captchaImage");
+        	  $("#btn").click(function(){	
+        		  
+        			$.get("${pageContext.request.contextPath}/identity/check","word="+$("input[name='code']").val(),function(d){
+        				if(d==0){
+        					alert("验证码输入错误");
+        				}else{
+        					$("form").submit()
+        				}
+        			})
+        		})
+        		
+        		$captchaImage.click(function() {
+        			$captchaImage.attr("src","${pageContext.request.contextPath}/identity/iden?i="+Math.random());
+        		});
+          })
+        </script>
 </head>
 <body>
 	<!-- Top content -->
@@ -66,10 +88,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                      </div>
 	                      <div class="form-group">
 	                        <input type="text" name="code" placeholder="请输入验证码" class="form-username form-control" id="form-username" style="width: 73%;padding-left: 10px">
-	                        <img id="vcode" src="getImg" style="width:25%; left: 75%;top: 3px; height:45px; ">
+	                        <img id="vcode" class="captchaImage" src="${pageContext.request.contextPath}/identity/iden" style="width:25%; left: 75%;top: 3px; height:45px; " />
+	                        <!-- <img id="vcode" src="getImg" style="width:25%; left: 75%;top: 3px; height:45px; "> -->
 	                      </div>
-	                      <button type="submit" class="btn">登录</button>
-	                      <button type="submit" class="btn" style="background-color: #d4d5d5;color: #696969;float:right">重置</button>
+	                      <button type="button" id="btn" class="btn">登录</button>
+	                      <button type="reset" class="btn" style="background-color: #d4d5d5;color: #696969;float:right">重置</button>
 	                      <div class="clear"></div>
 	                  </form>
 	                </div>

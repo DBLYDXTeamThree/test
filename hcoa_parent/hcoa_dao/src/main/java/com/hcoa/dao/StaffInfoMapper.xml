@@ -382,4 +382,7 @@
       telephone_ext = #{telephoneExt,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectByUsernameAndPassword" resultMap="BaseResultMap" >
+    select * from staff_info where  login_username=#{0} and  login_pwd=#{1}
+  </select>
 </mapper>
