@@ -22,7 +22,7 @@ public class LoginController {
 			return "login";
 		}
 		else{ 
-			session.setAttribute("staff", staff);
+			session.setAttribute("staff", staff); 
 		    return "index";
 		}
 	}
