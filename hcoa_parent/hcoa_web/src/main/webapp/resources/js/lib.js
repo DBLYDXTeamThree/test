@@ -9,7 +9,7 @@ var menuList =
  		
  		code: "SY",
  		
- 		icon: "images/nav_1.jpg"
+ 		icon: "resources/images/nav_1.jpg"
  	}),
  	
  	//部门
@@ -17,7 +17,7 @@ var menuList =
  	({
  		code: "BM",
  		
- 		icon: "images/nav_2.jpg",
+ 		icon: "resources/images/nav_2.jpg",
  		
  		children: 
  		{
@@ -203,7 +203,7 @@ var menuList =
  	({
  		code: "FW",
  		
- 		icon: "images/nav_3.jpg",
+ 		icon: "resources/images/nav_3.jpg",
  		
  		children:
  		[
@@ -246,7 +246,7 @@ var menuList =
  	({
  		code: "XT",
  		
- 		icon: "images/nav_5.jpg",
+ 		icon: "resources/images/nav_5.jpg",
  		
  		children:
  		[
@@ -314,7 +314,7 @@ var menuList =
  		
  		code: "ZG",
  		
- 		icon: "images/nav_6.jpg"
+ 		icon: "resources/images/nav_6.jpg"
  	})/*,
  	
  	//通讯录
