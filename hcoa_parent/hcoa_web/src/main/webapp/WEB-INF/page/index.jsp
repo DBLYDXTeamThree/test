@@ -12,7 +12,7 @@
 
     <title>交通管理局OA管理平台</title>
 
-    <meta name="pragma" content="no-cache">
+    <meta name="pragma" content="no-cache"> 
     <meta name="cache-control" content="no-cache">
     <meta name="expires" content="0">
     <meta charset="utf-8">
