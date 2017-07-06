@@ -44,6 +44,17 @@ public class StaffInfo {
      */
     private RoleSet role;
     
+    private Department department;
+    
+    public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+    
     
     public Department getDept() {
 		return dept;
