@@ -649,7 +649,7 @@ function successMethod(data, method)
 }
 
 /*
- * 将时间戳转换成时间字符串 @author杨雪
+ * 将时间戳转换成时间字符串 
  */
 function getTime(nS)
 {

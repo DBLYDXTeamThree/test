@@ -382,7 +382,52 @@
       telephone_ext = #{telephoneExt,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectByUsernameAndPassword" resultMap="BaseResultMap" >
-    select * from staff_info where  login_username=#{0} and  login_pwd=#{1}
+  
+  <resultMap id="ResultWithDeptRole" type="com.hcoa.entity.StaffInfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="realname" property="realname" jdbcType="VARCHAR" />
+    <result column="login_username" property="loginUsername" jdbcType="VARCHAR" />
+    <result column="login_pwd" property="loginPwd" jdbcType="VARCHAR" />
+    <result column="cellphone" property="cellphone" jdbcType="VARCHAR" />
+    <result column="department_id" property="departmentId" jdbcType="BIGINT" />
+    <result column="role_id" property="roleId" jdbcType="BIGINT" />
+    <result column="approve_rule_id" property="approveRuleId" jdbcType="BIGINT" />
+    <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="entrytime" property="entrytime" jdbcType="TIMESTAMP" />
+    <result column="is_display" property="isDisplay" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+    <result column="telephone_ext" property="telephoneExt" jdbcType="VARCHAR" />
+    
+    <association property="dept" javaType="com.hcoa.entity.Department">
+	    <id column="did" property="id" jdbcType="BIGINT" />
+	    <result column="ddepartment_caption" property="departmentCaption" jdbcType="VARCHAR" />
+	    <result column="dparent_id" property="parentId" jdbcType="BIGINT" />
+	    <result column="dremark" property="remark" jdbcType="VARCHAR" />
+    </association>
+    
+    <association property="role" javaType="com.hcoa.entity.RoleSet">
+	      <id column="rid" property="id" jdbcType="BIGINT" />
+	      <result column="rrole_caption" property="roleCaption" jdbcType="VARCHAR" />
+	      <result column="rremark" property="remark" jdbcType="VARCHAR" />
+    </association>
+  </resultMap>
+  
+  <sql id="rootsql">
+  	select a.*,
+  			b.id did,b.department_caption ddepartment_caption,b.parent_id dparent_id,b.remark dremark,
+  			c.id rid,c.role_caption rrole_caption,c.remark rremark 
+  	 from staff_info a
+  		left join department b
+  			on a.department_id = b.id
+  		left join role_set c
+  			on a.role_id = c.id
+  </sql>
+  
+  <select id="selectByUsernameAndPassword" resultMap="ResultWithDeptRole" >
+    	<include refid="rootsql"></include>
+		 where  login_username=#{0} and  login_pwd=#{1}
   </select>
 </mapper>
