@@ -34,8 +34,34 @@ public class StaffInfo {
     private String telephone;
 
     private String telephoneExt;
+    
+    /**
+     * 员工部门
+     */
+    private Department dept;
+    /**
+     * 员工角色
+     */
+    private RoleSet role;
+    
+    
+    public Department getDept() {
+		return dept;
+	}
 
-    public Long getId() {
+	public void setDept(Department dept) {
+		this.dept = dept;
+	}
+
+	public RoleSet getRole() {
+		return role;
+	}
+
+	public void setRole(RoleSet role) {
+		this.role = role;
+	}
+
+	public Long getId() {
         return id;
     }
 
