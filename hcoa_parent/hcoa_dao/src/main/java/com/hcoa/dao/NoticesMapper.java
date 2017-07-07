@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface NoticesMapper {
+	
     int countByExample(NoticesExample example);
 
     int deleteByExample(NoticesExample example);
