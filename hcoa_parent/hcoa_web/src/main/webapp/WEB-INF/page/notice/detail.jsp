@@ -8,10 +8,10 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@ include file="../head.jsp"%>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/index.css">
-		<link rel="stylesheet" type="text/css" href="css/title/Examination1.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/index.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/title/Examination1.css">
 		
 <!-- 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -24,12 +24,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<link rel="stylesheet" type="text/css" href="css/index/From.css">
 		<link rel="stylesheet" type="text/css" href="css/index/index.css" />
  -->		
-		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap-switch.js"></script>
-		<script type="text/javascript" src="js/lib.js"></script>
-		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap-switch.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lib.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/init.js"></script>
 <!--导航结束-->
 
 
@@ -37,8 +37,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="main-right">
 <!--面包屑导航-->
   <ol class="breadcrumb">
-    <li><a href="#">当前位置:</a></li>
-    <li><a href="#">发文管理</a></li>
+    <li>当前位置:</li>
+    <li>发文管理</li>
     <li class="active">发文申请</li>
   </ol>
 <!--面包屑导航-->
@@ -68,6 +68,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<p>哈尔滨市交通基础设施投资建设管理有限公司 版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;技术支持：鑫联华</p>
 			</div>
 			<!--尾部结束-->
-		</div>
+
 	</body>
 </html>
